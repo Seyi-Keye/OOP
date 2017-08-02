@@ -102,7 +102,7 @@ end
 `callable` and `ringable` are methods because they define the behaviour of `Phone`.
 There are different types of methods which includes and not limited to
 `Instance method `
-``` 
+``` ruby
 class Phone
  def initialize
   p "I am called every time an instance of Phone is made"
@@ -110,7 +110,7 @@ class Phone
 end
 ```
 `Accessor method`
-```
+``` ruby
 class Phone
   attr_accessor :tone
 
@@ -133,7 +133,7 @@ puts seyi.tone             //=> "flute"
 
 `class methods`
 Class methods are methods we can call directly on the class itself, without having to instantiate any objects. When defining a class method, we prepend the method name with the reserved word `self`.
-```
+``` ruby
 class Phone
   def self.ringable
    p "ringing!"
