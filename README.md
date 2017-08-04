@@ -144,7 +144,7 @@ Phone.ringable    //=> "ringing!"
 ```
 
 ## Overloading
-This occurs when a method that is available witin a subclass through inheritance takes in more number of arguments which in turn changes the output.
+Overloading in programming, occurs when a method that is available witin a subclass through inheritance takes in more number of arguments which in turn changes the output. You would expect it to look like the example below.
 ``` ruby
 class Phone
   def calling
@@ -156,18 +156,16 @@ class Nokia < Phone
   def calling(number)
     p "I am calling #{number}"
   end
-end 
-
-class Tecno < Phone
+  
   def calling(mine, yours)
     p "#{mine} is dailing #{yours}"
   end
-end
+  
+end             
 
-seyi = Nokia.new                      //=> #<Nokia:0x0055e7ef5fb478>
-seyi.calling('123457')                //=> "I am calling 123457"
-trail = Tecno.new                     //=> #<Tecno:0x0055ce63ea2e78>
-trail.calling('00111', '41900')       //=> "00111 is dailing 41900"
+seyi = Nokia.new
+seyi.calling('123457')                //=> wrong number of arguments (given 1, expected 2)
+puts seyi.calling('00111', '41900')   //=> "00111 is dailing 41900"    
 ```
-The example above explains overloading, the `calling` method was inherited by the two sibling classes `Nokia and Tecno` from `Phone`. they each overloaded the initial method by passing in more number of arguments to `calling` than the original in the super class thereby each recreating a new output to suite each instance.
+Unfortunately, Ruby does not support overloading. The example above explains overloading why. The `calling` method was overloaded by passing in more number of arguments to `calling` than the original initial. 
 
